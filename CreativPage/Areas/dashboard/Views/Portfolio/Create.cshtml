@@ -1,0 +1,21 @@
+﻿
+
+    @if(ViewBag.PhotoError != null)
+    {
+        <div class = "alert alert-danger">@ViewBag.PhotoError</div>
+    }
+
+<form method = "post" enctype = "multipart/form-data" >
+    <select class ="form-control my-2" name = "Category">
+        @foreach(var categorie in ViewData["categories"] as List<Category>  )
+        {
+            <option>@categorie.CategoryName</option>
+        }
+  
+    </select>
+    <input class ="form-control my-2" type = "text" name = "Description" placeholder = "Description" />
+    <input class ="form-control my-2" type = "file" name = "NewPhoto" />
+    
+    <input type = "submit" value = "Create" />
+    
+</form>

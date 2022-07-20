@@ -1,0 +1,15 @@
+﻿@model Portfolio
+
+<form method ="Post" enctype = "multipart/form-data">
+     <select class ="form-control my-2" name = "Category">
+        @foreach(var categorie in ViewBag.Categories)
+        {
+            <option>@categorie.CategoryName</option>
+        }
+  
+    </select>
+     <input class ="form-control my-2" type = "text" value = "@Model.Description" name = "Description" placeholder = "Description" />
+    <input class ="form-control my-2" type = "file" value = "" name = "NewPhoto" />
+
+    <input type = "submit" value = "Edit" />
+</form>
